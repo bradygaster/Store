@@ -22,6 +22,7 @@ namespace Store.Controllers
             _productService = productService;
         }
 
+        [ApiVersion( "1.0" )]
         [HttpGet]
         public async Task<IEnumerable<Product>> Get()
         {
