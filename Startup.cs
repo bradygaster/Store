@@ -34,6 +34,11 @@ namespace Store
             });
             services.AddMemoryCache();
             services.AddSingleton<IProductService, MemoryCacheProductService>();
+            services.AddApiVersioning(versioning =>
+            {
+                versioning.AssumeDefaultVersionWhenUnspecified = true;
+                versioning.DefaultApiVersion = new ApiVersion(1, 0);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
